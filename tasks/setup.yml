@@ -41,11 +41,3 @@
   register: steam_login
   no_log: yes
   when: steamcmd_steam.guard
-
-- name: linking steamclient.so to the ~/.steam/sdk32/steamclient.so directory
-  file:
-    src: "{{ steamcmd_directory }}linux32/steamclient.so"
-    dest: "{{ steamcmd_user_home }}.steam/sdk32/steamclient.so"
-    state: link
-    creates: yes
-  when: steam_login.stdout.find('unable to locate a running instance of Steam, or a local steamclient.dll') != -1
