@@ -17,7 +17,6 @@
     url: http://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz
     dest: "{{ steamcmd_directory }}steamcmd_linux.tar.gz"
     force: yes
-    headers: "User-Agent: lutangar/ansible-role-steamcmd"
     validate_certs: no
   when: (steamcache is undefined) or (not steamcache)
 
